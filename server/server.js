@@ -23,7 +23,7 @@ mongoose
     console.log("Database Connection Failed", error);
   });
 
-// routes
+// routess
 app.get("/", (req, res) => {
   res.json({ message: "hello my niggur" });
 });
