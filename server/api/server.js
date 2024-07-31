@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.json({ message: "hello my niggur" });
 });
 
-const postsRouter = require("./routes/post.route");
+const postsRouter = require("../routes/post.route");
 app.use("/api", postsRouter);
 
 // create server
