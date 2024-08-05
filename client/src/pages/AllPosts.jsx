@@ -12,7 +12,7 @@ function AllPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/posts`);
+        const response = await axios.get(`${apiUrl.API_URL}/posts`);
         // Check if response.data is an array
         if (Array.isArray(response.data)) {
           setPosts(response.data);

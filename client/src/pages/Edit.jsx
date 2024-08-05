@@ -13,7 +13,7 @@ function Edit() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/post/${id}`);
+        const response = await axios.get(`${apiUrl.API_URL}/post/${id}`);
         setContent(response.data.content);
       } catch (error) {
         console.error("Error fetching post:", error);
