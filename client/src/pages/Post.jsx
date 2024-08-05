@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import Header from "../components/Header";
+const apiUrl = require("../../routes");
 
 function Post() {
   const { id } = useParams();
@@ -11,9 +12,7 @@ function Post() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/api/post/${id}`
-        );
+        const response = await axios.get(`${apiUrl}/api/post/${id}`);
         setPost(response.data);
       } catch (error) {
         console.error("Error fetching post:", error);

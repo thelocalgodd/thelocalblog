@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+const apiUrl = require("../../routes");
 
 function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -11,7 +12,7 @@ function AllPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/posts");
+        const response = await axios.get(`${apiUrl}/posts`);
         // Check if response.data is an array
         if (Array.isArray(response.data)) {
           setPosts(response.data);

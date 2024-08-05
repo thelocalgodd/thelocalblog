@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
+const apiUrl = require("../../routes");
 
 function Edit() {
   const { id } = useParams();
@@ -12,9 +13,7 @@ function Edit() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/api/post/${id}`
-        );
+        const response = await axios.get(`${apiUrl}/post/${id}`);
         setContent(response.data.content);
       } catch (error) {
         console.error("Error fetching post:", error);

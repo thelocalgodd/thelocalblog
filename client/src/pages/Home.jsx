@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import Header from "../components/Header";
+const apiUrl = require("../../routes");
 
 function Home() {
   const [title, setTitle] = useState("");
@@ -12,7 +13,7 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/post", {
+      const response = await axios.post(`${apiUrl}/api/post`, {
         title,
         content,
       });
