@@ -25,7 +25,7 @@ function Edit() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/api/posts/update/${id}`, {
+      await axios.put(`${apiUrl.API_URL}/api/posts/update/${id}`, {
         content,
         privateKey,
       });
@@ -38,7 +38,7 @@ function Edit() {
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
-        await axios.delete(`http://localhost:3000/api/posts/delete/${id}`, {
+        await axios.delete(`${apiUrl.API_URL}/api/posts/delete/${id}`, {
           data: { privateKey },
         });
         navigate("/");
